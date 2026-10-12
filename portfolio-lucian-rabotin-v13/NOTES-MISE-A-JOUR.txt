@@ -1,0 +1,9 @@
+Mise à jour du portfolio
+
+- Image de l'article « Fermeture progressive des réseaux mobiles 2G et 3G » remplacée par une antenne mobile.
+- Image de l'article « Vulnérabilité dans les produits Tenable » remplacée par un visuel de terminal/cybersécurité.
+- Image fournie par Lucian ajoutée à la carte « Guide sécurité » de la page d'accueil.
+- Suppression des mentions de numéro de téléphone dans les pages HTML.
+- Liens GitHub et LinkedIn visibles dans les pieds de page, avec l'adresse e-mail conservée.
+- Ajout de commentaires HTML autour des pieds de page et des données de veille.
+- Les pages E5 et E6 et leurs documents ne sont pas volontairement modifiés par cette opération.

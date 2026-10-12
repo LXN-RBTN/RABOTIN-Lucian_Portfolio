@@ -1,0 +1,490 @@
+/* =========================================================
+   PORTFOLIO LUCIAN RABOTIN - FEUILLE DE STYLE PRINCIPALE
+   Ce fichier évite le rendu HTML brut visible dans la capture.
+   ========================================================= */
+:root{--bg:#050505;--panel:#0b0b0b;--panel2:#101010;--text:#f4f4f4;--muted:#9a9a9a;--line:#292929;--strong:#404040;--accent:#7564ff;--accent2:#71e3dc;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input,select{font:inherit}img{max-width:100%;display:block}.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+/* Navigation principale. */
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(5,5,5,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:13px}.logo{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--strong);font-size:12px;color:var(--accent2)}.nav-links{display:flex;gap:20px;align-items:center}.nav-links a{padding:8px 0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#bdbdbd;position:relative}.nav-links a:hover,.nav-links a.active{color:#fff}.nav-links a.active:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent2)}.menu-btn{display:none;border:1px solid var(--line);background:transparent;color:#fff;padding:9px 12px;cursor:pointer}
+/* Petit repère vertical inspiré des portfolios éditoriaux. */
+.scroll-top{position:fixed;left:18px;top:50%;z-index:20;transform:rotate(-90deg) translateX(-50%);transform-origin:left top;font-size:9px;letter-spacing:.25em;color:#777;cursor:pointer}.scroll-top:hover{color:#fff}
+/* Hero très typographique. */
+.hero{min-height:78vh;display:flex;align-items:center;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1.7fr .7fr;gap:70px;padding:110px 0 90px}.kicker,.number,.eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2)}.hero h1{margin:20px 0 28px;font-size:clamp(64px,10vw,150px);line-height:.84;letter-spacing:-.065em;text-transform:uppercase}.hero h1 span{color:var(--accent)}.hero h1 small{display:block;max-width:650px;margin-top:30px;font-size:15px;line-height:1.6;letter-spacing:0;color:var(--muted);text-transform:none;font-weight:400}.hero-side{align-self:end;border-left:1px solid var(--line);padding-left:28px;color:var(--muted);font-size:14px}.btns{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border:1px solid var(--strong);font-size:10px;letter-spacing:.14em;text-transform:uppercase;transition:.2s;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn.primary{background:#fff;color:#000;border-color:#fff}.btn.secondary{background:transparent;color:#fff}
+/* Sections et titres. */
+.section{padding:110px 0;border-bottom:1px solid var(--line)}.section-title{display:grid;grid-template-columns:1fr .7fr;gap:40px;align-items:end;margin-bottom:55px}.section-title h2{margin:12px 0 0;font-size:clamp(42px,6vw,86px);line-height:.9;letter-spacing:-.055em;text-transform:uppercase}.section-title>p{color:var(--muted);max-width:430px;margin:0}
+/* Cartes façon grille de projets. */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.card{display:block;background:var(--panel);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.25s}.card:hover{background:var(--panel2);transform:translateY(-4px)}.card-body{padding:26px}.card h3{margin:14px 0 10px;font-size:24px;letter-spacing:-.03em;text-transform:uppercase}.card p{margin:0;color:var(--muted);font-size:13px}.card-image{height:220px;border-bottom:1px solid var(--line);display:grid;place-items:center;background:radial-gradient(circle at 20% 20%,rgba(117,100,255,.28),transparent 34%),radial-gradient(circle at 80% 70%,rgba(113,227,220,.18),transparent 35%),#0b0b0b} .card-image img{width:100%;height:100%;object-fit:cover;display:block}.mock{width:55%;height:52%;border:1px solid #555;box-shadow:14px 14px 0 rgba(117,100,255,.35)}.project-meta{display:flex;justify-content:space-between;gap:15px;color:#777;font-size:9px;letter-spacing:.15em;text-transform:uppercase}.accent-top{height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{border:1px solid var(--line);padding:5px 8px;color:#aaa;font-size:9px;text-transform:uppercase;letter-spacing:.1em}
+/* Bloc profil. */
+.profile{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.profile p{font-size:19px;max-width:700px;color:#d1d1d1}.stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}.stat{padding:22px 0;border-bottom:1px solid var(--line)}.stat:nth-child(odd){padding-right:20px;border-right:1px solid var(--line)}.stat:nth-child(even){padding-left:20px}.stat small{display:block;color:#777;text-transform:uppercase;letter-spacing:.12em;font-size:9px}.stat strong{display:block;margin-top:8px;font-size:17px}
+/* Hero des pages internes. */
+.page-hero{padding:95px 0 70px;border-bottom:1px solid var(--line)}.page-hero h1{margin:16px 0 0;font-size:clamp(54px,9vw,120px);line-height:.86;letter-spacing:-.06em;text-transform:uppercase}.page-hero p{max-width:700px;color:var(--muted);margin-top:25px}
+/* Filtres et cartes de veille. */
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-bottom:35px}.field{width:100%;min-height:46px;background:#090909;border:1px solid var(--line);color:#fff;padding:0 14px;outline:none}.field:focus{border-color:#777}.article-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.article-card{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px;background:#080808}.article-card:hover{background:#101010}.article-card h3{font-size:20px;line-height:1.05;margin:15px 0}.article-card p{color:var(--muted);font-size:13px}.article-card .meta{display:flex;justify-content:space-between;gap:12px;color:#777;font-size:9px;text-transform:uppercase;letter-spacing:.12em}.article-card .read{display:inline-block;margin-top:20px;color:var(--accent2);font-size:10px;text-transform:uppercase;letter-spacing:.12em}.empty{padding:35px;border:1px dashed var(--line);color:var(--muted)}
+/* CV. */
+.cv-box{display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid var(--line);padding:25px;margin-bottom:15px}.cv-box p{margin:5px 0 0;color:#777;font-size:12px}.cv-preview{width:100%;height:720px;border:1px solid var(--line);background:#fff}
+/* Formulaire de contact. */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-field{display:flex;flex-direction:column;gap:8px}.form-field.full{grid-column:1/-1}.form-field label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#777}.form-field input,.form-field textarea{width:100%;background:#090909;border:1px solid var(--line);color:#fff;padding:14px;outline:none}.form-field textarea{min-height:180px;resize:vertical}
+/* Bandeau cookies. */
+.cookie{position:fixed;left:20px;right:20px;bottom:20px;z-index:2000;display:none;align-items:center;justify-content:space-between;gap:25px;padding:18px 20px;background:#fff;color:#000;border:1px solid #fff;box-shadow:0 15px 50px rgba(0,0,0,.5)}.cookie.show{display:flex}.cookie p{margin:0;font-size:12px}.cookie .btn.secondary{color:#000;border-color:#aaa}
+/* Footer inspiré du modèle demandé, mais adapté au portfolio. */
+footer{background:#0a0f18;color:#fff;padding:75px 0 20px;border-top:1px solid #172130}.footer-grid{display:grid;grid-template-columns:1.3fr .8fr .9fr;gap:55px;padding-bottom:55px}footer h3{margin:0 0 18px;font-size:15px;text-transform:uppercase;letter-spacing:.1em}footer p{color:#aab1bc;font-size:13px;max-width:360px}.footer-links{display:flex;flex-direction:column;gap:9px;color:#aab1bc;font-size:12px}.footer-links a:hover{color:#fff}.social{display:flex;gap:8px;margin-top:22px}.social a{width:38px;height:38px;display:grid;place-items:center;border:1px solid #2c3a4d;font-size:11px}.footer-bottom{border-top:1px solid #253141;padding-top:20px;color:#697585;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+/* Apparition progressive. */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+/* Responsive mobile/tablette. */
+@media(max-width:980px){.nav-links{display:none;position:absolute;left:0;right:0;top:78px;flex-direction:column;align-items:flex-start;padding:20px 24px;background:#070707;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.menu-btn{display:block}.hero-grid,.profile,.section-title{grid-template-columns:1fr}.hero-grid{gap:45px}.hero-side{border-left:0;border-top:1px solid var(--line);padding:25px 0 0}.card-grid,.article-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.filters{grid-template-columns:1fr 1fr}.filters .field:first-child{grid-column:1/-1}}
+@media(max-width:640px){.container{width:calc(100% - 28px)}.scroll-top{display:none}.hero-grid{padding:80px 0 65px}.hero h1{font-size:64px}.section{padding:75px 0}.card-grid,.article-grid,.footer-grid,.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.filters{grid-template-columns:1fr}.filters .field:first-child{grid-column:auto}.cv-box{align-items:flex-start;flex-direction:column}.cv-preview{height:520px}.cookie{left:10px;right:10px;bottom:10px;flex-direction:column;align-items:flex-start}}
+
+/* Mise en page de la page des mentions légales. */
+.legal-content{max-width:1050px}
+.legal-content .card{margin-bottom:18px}
+.legal-content .card p{margin:8px 0;color:#c9c9c9}
+.legal-content .card a{color:var(--accent2)}
+.legal-note{color:#858585!important;font-size:12px!important}
+
+/* =========================================================
+   Veille : compteur et labels accessibles.
+   ========================================================= */
+.article-count {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================
+   Images des articles de veille.
+   ========================================================= */
+.article-card {
+  overflow: hidden;
+}
+
+.article-image {
+  display: block;
+  margin: -1px -1px 22px;
+  border-bottom: 1px solid var(--line);
+  background: #090909;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.article-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease, opacity .45s ease;
+}
+
+.article-card:hover .article-image img {
+  transform: scale(1.035);
+  opacity: .9;
+}
+
+.article-source {
+  align-items: center;
+}
+
+.article-source .read {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+}
+
+.article-source .read:hover {
+  border-color: var(--accent);
+}
+
+/* =========================================================
+   Cartes d'expériences professionnelles.
+   ========================================================= */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.experience-card {
+  background: var(--panel);
+  padding: 28px;
+}
+
+.experience-logo {
+  aspect-ratio: 16 / 7;
+  border: 1px solid var(--line);
+  margin-bottom: 24px;
+  overflow: hidden;
+  background: #070707;
+}
+
+.experience-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 950px) {
+  .experience-grid { grid-template-columns: 1fr; }
+}
+
+
+/* =========================================================
+   PAGE CONTACT
+   Mise en page éditoriale : informations à gauche,
+   formulaire à droite, avec un rendu propre et responsive.
+   ========================================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.contact-intro,
+.contact-form-wrap {
+  background: var(--panel);
+  padding: 42px;
+}
+
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  min-height: 620px;
+}
+
+.contact-intro h2,
+.form-heading h2 {
+  margin: 16px 0 22px;
+  font-size: clamp(38px, 5vw, 68px);
+  line-height: .9;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.contact-lead {
+  max-width: 460px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact-detail-list {
+  margin-top: 45px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-label {
+  color: #666;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.contact-detail a,
+.contact-detail strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-detail a:hover {
+  color: var(--accent2);
+}
+
+.contact-detail span:last-child {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.contact-mail-btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.contact-form-wrap {
+  min-width: 0;
+}
+
+.form-heading {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+}
+
+.form-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(32px, 4vw, 54px);
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  color: #777;
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  outline: none;
+  background: #070707;
+  color: var(--text);
+  padding: 15px 16px;
+  font-size: 13px;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.form-field input {
+  min-height: 50px;
+}
+
+.form-field textarea {
+  min-height: 190px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #555;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #666;
+  background: #0b0b0b;
+}
+
+.contact-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-status {
+  color: #666;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.contact-note {
+  margin-top: 35px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-note strong {
+  color: #777;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+
+.contact-note p {
+  max-width: 650px;
+  margin: 9px 0 0;
+  color: #777;
+  font-size: 11px;
+}
+
+@media (max-width: 980px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-intro {
+    min-height: auto;
+  }
+
+  .contact-mail-btn {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-intro,
+  .contact-form-wrap {
+    padding: 28px 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field.full {
+    grid-column: auto;
+  }
+
+  .contact-submit-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-intro h2,
+  .form-heading h2 {
+    font-size: 42px;
+  }
+}
+
+
+/* =========================================================
+   HERO — PHOTO À DROITE
+   ========================================================= */
+.hero-student {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+  gap: 70px;
+  align-items: end;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-photo {
+  justify-self: end;
+  width: min(100%, 360px);
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0b0b0b;
+}
+
+.hero-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(255,255,255,.08);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-photo-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 10px;
+  color: #666;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.hero-role {
+  margin-top: 18px;
+  color: var(--accent2);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.hero-socials {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+}
+
+.hero-socials a {
+  flex: 1;
+  padding: 12px 14px;
+  color: #777;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color .2s ease, background .2s ease;
+}
+
+.hero-socials a + a {
+  border-left: 1px solid var(--line);
+}
+
+.hero-socials a:hover {
+  color: var(--text);
+  background: #0d0d0d;
+}
+
+@media (max-width: 800px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero-photo {
+    justify-self: start;
+    width: min(100%, 320px);
+  }
+}
+
+/* Performance : réserver la place des images et éviter les recalculs de mise en page. */
+.article-image { aspect-ratio: 3 / 2; display: block; overflow: hidden; background: #0d0d0d; contain: layout paint; }
+.article-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
