@@ -1,0 +1,6 @@
+Correction des images de la veille 5G / 6G
+
+Les images de plusieurs articles qui réutilisaient la même illustration de téléphone 5G ont été redistribuées vers les visuels déjà présents dans assets/images/veille/.
+L'illustration répétée 5g-07.jpg est désormais attribuée uniquement à l'article 2.
+Les titres, dates, résumés, liens, catégories, CSS et JavaScript n'ont pas été modifiés.
+Les données data/5g-6g-articles.json et le bloc embarqué dans veille-5g-6g.html ont été synchronisés.

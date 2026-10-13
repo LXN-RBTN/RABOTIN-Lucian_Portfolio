@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="E5 — Activités professionnelles réalisées lors du premier stage chez Altémed à Montpellier.">
+  <title>E5 | Stage chez Altémed — Lucian Rabotin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .stage-intro{max-width:1000px;margin:0 auto 34px;padding:30px;border:1px solid var(--border,rgba(255,255,255,.12));border-left:4px solid var(--accent,#168bff);border-radius:16px;background:var(--card,rgba(255,255,255,.035))}
+    .stage-intro p{line-height:1.75}
+    .stage-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}
+    .stage-phase{padding:18px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:12px}
+    .stage-phase h3{margin:0 0 8px}
+    .stage-phase p{margin:0}
+    .activity-card{height:100%;display:flex;flex-direction:column}
+    .activity-card .btns{margin-top:auto;padding-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+    .activity-card .btn{display:inline-flex;align-items:center;justify-content:center}
+    .doc-note{font-size:.9rem;opacity:.8;margin-top:12px}
+    @media(max-width:700px){.stage-timeline{grid-template-columns:1fr}.stage-intro{padding:20px}}
+  </style>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><span class="logo">LR</span><span>Lucian Rabotin</span></a>
+  <button class="menu-btn" aria-label="Ouvrir le menu">☰</button>
+  <nav class="nav-links" aria-label="Navigation principale">
+    <a href="index.html">Accueil</a><a href="parcours.html">Parcours</a>
+    <a href="veille-cyber.html">Cybersécurité</a><a href="veille-5g-6g.html">5G / 6G</a>
+    <a href="e5.html" aria-current="page">E5</a><a href="e6.html">E6</a>
+    <a href="guide.html">Guide</a><a href="contact.html">Contact</a>
+  </nav>
+</div></header>
+<div class="scroll-top">SCROLL TO TOP</div>
+<main>
+  <section class="page-hero"><div class="container">
+    <div class="number">03 / E5</div>
+    <h1>ÉPREUVE E5</h1>
+    <p>Présentation de mon premier stage et des activités professionnelles réalisées chez Altémed à Montpellier.</p>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <div class="stage-intro reveal">
+      <div class="eyebrow">Premier stage · Altémed · Montpellier</div>
+      <h2>Découverte du support informatique et de l’infrastructure réseau</h2>
+      <p>J’ai effectué mon premier stage chez Altémed à Montpellier. J’ai commencé par deux semaines au sein du <strong>Digital Support</strong>, où j’ai pu découvrir l’assistance informatique et les besoins des utilisateurs. J’ai ensuite poursuivi mon stage pendant cinq semaines dans l’équipe <strong>Infrastructure Réseau</strong>, afin de découvrir les opérations liées aux systèmes, à la virtualisation, aux sauvegardes et au réseau.</p>
+      <p>Cette page présente uniquement ce premier stage, avec deux activités documentées. Le deuxième stage n’ayant pas encore été réalisé, il n’est pas présenté ici.</p>
+      <div class="stage-timeline">
+        <div class="stage-phase"><div class="eyebrow">Semaines 1 à 2</div><h3>Digital Support</h3><p>Découverte du support informatique, du matériel utilisateur et des opérations de maintenance.</p></div>
+        <div class="stage-phase"><div class="eyebrow">Semaines 3 à 7</div><h3>Infrastructure Réseau</h3><p>Découverte des environnements virtualisés, des sauvegardes et des opérations de migration de machines virtuelles.</p></div>
+      </div>
+    </div>
+
+    <div class="section-head"><div><div class="eyebrow">Activités professionnelles</div><h2>Réalisations du premier stage</h2></div></div>
+    <div class="grid grid-2">
+      <article class="card project activity-card reveal">
+        <div class="eyebrow">Activité 1 · Digital Support</div>
+        <h3>Maintenance et amélioration des ordinateurs portables</h3>
+        <p>J’ai proposé de récupérer plusieurs anciens ordinateurs portables sous Windows 10 afin d’examiner leur matériel et de trier les barrettes de mémoire vive. Après avoir retiré les vis et déclipsé soigneusement la coque arrière, j’ai identifié les composants internes, notamment la RAM et le SSD. Cette opération devait aider à repérer le matériel réutilisable et à préparer des ordinateurs fonctionnels pour les nouveaux stagiaires et alternants.</p>
+        <div class="tags"><span class="tag">Maintenance</span><span class="tag">RAM</span><span class="tag">SSD</span><span class="tag">Matériel informatique</span></div>
+        <p class="doc-note">Document associé : procédure de démontage et d’identification des composants, avec photos.</p>
+        <div class="btns"><a class="btn secondary" href="assets/documents/Activite-1-maintenance-PC-RAM-SSD.pdf" target="_blank" rel="noopener noreferrer">Voir le document PDF</a></div>
+      </article>
+
+      <article class="card project activity-card reveal">
+        <div class="eyebrow">Activité 2 · Infrastructure Réseau</div>
+        <h3>Sauvegarde et migration d’une machine virtuelle</h3>
+        <p>À partir du mode opératoire fourni, l’activité porte sur les étapes d’une sauvegarde et d’une migration de machine virtuelle. La procédure décrit l’arrêt des tâches de réplication et de sauvegarde, le contrôle de la disponibilité de la VM, la sauvegarde avec Veeam, la restauration instantanée vers VMware vSphere, puis la migration vers le datastore cible. Elle prévoit enfin la reconnexion réseau, le démarrage de la VM et la vérification de son fonctionnement ainsi que des VMware Tools.</p>
+        <div class="tags"><span class="tag">VMware vSphere</span><span class="tag">Veeam</span><span class="tag">Sauvegarde</span><span class="tag">Migration</span><span class="tag">Réseau</span></div>
+        <p class="doc-note">Document associé : mode opératoire illustré en 20 pages. Il décrit la procédure technique ; il ne signifie pas que chaque étape a été exécutée personnellement.</p>
+        <div class="doc-note"><strong>Document non publié pour le moment.</strong> La procédure détaillée sera ajoutée uniquement après vérification et autorisation de publication.</div>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="section alt"><div class="container">
+    <div class="section-head"><div><div class="eyebrow">Compétences mobilisées</div><h2>Compétences et apprentissages</h2></div></div>
+    <div class="tags"><span class="tag">Support utilisateurs</span><span class="tag">Maintenance matérielle</span><span class="tag">Identification des composants</span><span class="tag">Virtualisation</span><span class="tag">Sauvegarde et restauration</span><span class="tag">Infrastructure réseau</span><span class="tag">Documentation technique</span></div>
+    <p class="doc-note">Les descriptions sont basées sur les deux documents fournis. Les manipulations présentées dans le mode opératoire de migration sont formulées comme une procédure technique lorsque le document ne permet pas de confirmer qu’elles ont toutes été réalisées personnellement.</p>
+  </div></section>
+</main>
+<!-- Pied de page : contact et liens professionnels. -->
+<footer><div class="container footer-grid">
+  <div><h3>Lucian RABOTIN</h3><p>Étudiant en BTS SIO 2ème année, passionné par les réseaux, les infrastructures et la cybersécurité.</p><div class="social"><a href="https://www.linkedin.com/in/lucian-rabotin-715386337" target="_blank" rel="noopener noreferrer">in</a><a href="https://github.com/LXN-RBTN" target="_blank" rel="noopener noreferrer">GH</a><a href="mailto:lucian.rabotin@gmail.com">✉</a></div></div>
+  <div><h3>Liens rapides</h3><div class="footer-links"><a href="index.html">Accueil</a><a href="parcours.html">Parcours</a><a href="e5.html">Portfolio E5</a><a href="e6.html">Portfolio E6</a><a href="guide.html">Guide</a><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a></div></div>
+  <div><h3>Contact</h3><div class="footer-links"><span>✉ lucian.rabotin@gmail.com</span><button class="btn secondary" data-cookie-reset>Gestion des cookies</button><a href="https://www.linkedin.com/in/lucian-rabotin-715386337" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/LXN-RBTN" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+</div><div class="footer-bottom">© 2026 Lucian RABOTIN · Tous droits réservés.</div></footer>
+<div class="cookie"><p><strong>Respect de votre vie privée</strong><br>Ce site mémorise uniquement votre choix concernant ce bandeau grâce au stockage local.</p><div class="btns" style="margin:0"><button class="btn secondary" id="refuseCookies">Refuser</button><button class="btn primary" id="acceptCookies">Accepter</button></div></div>
+<script src="js/navigation.js"></script><script src="js/main.js"></script><script src="js/cookie.js"></script>
+</body></html>

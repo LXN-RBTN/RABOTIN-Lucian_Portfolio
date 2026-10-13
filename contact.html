@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact de Lucian Rabotin, étudiant en BTS SIO SISR.">
+  <title>Contact | Lucian Rabotin</title>
+
+  <!-- Police utilisée par l'interface. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Feuilles de style du portfolio. -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+  <!-- Navigation principale. -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Retour à l'accueil">
+        <span class="logo">LR</span>
+        <span>Lucian Rabotin</span>
+      </a>
+
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="parcours.html">Parcours</a>
+        <a href="veille-cyber.html">Cybersécurité</a>
+        <a href="veille-5g-6g.html">5G / 6G</a>
+        <a href="e5.html">E5</a>
+        <a href="e6.html">E6</a>
+        <a href="guide.html">Guide</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Repère vertical inspiré du style éditorial du portfolio. -->
+  <div class="scroll-top">SCROLL TO TOP</div>
+
+  <main>
+    <!-- En-tête de la page Contact. -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="number">08 / CONTACT</div>
+        <h1>ME CONTACTER</h1>
+        <p>
+          Une question sur mon parcours, mes projets, mon expérience en infrastructure
+          ou ma veille technologique ? Vous pouvez me contacter directement par email.
+        </p>
+      </div>
+    </section>
+
+    <!-- Zone principale : informations à gauche, formulaire à droite. -->
+    <section class="section contact-section">
+      <div class="container contact-grid">
+
+        <!-- Coordonnées et informations utiles. -->
+        <aside class="contact-intro reveal">
+          <div class="eyebrow">CONTACT DIRECT</div>
+          <h2>PARLONS<br>ENSEMBLE.</h2>
+          <p class="contact-lead">
+            Je suis actuellement étudiant en deuxième année de BTS SIO,
+            option SISR, avec un intérêt particulier pour les réseaux,
+            les infrastructures et la cybersécurité.
+          </p>
+
+          <div class="contact-detail-list">
+            <div class="contact-detail">
+              <span class="contact-label">EMAIL</span>
+              <a href="mailto:lucian.rabotin@gmail.com">lucian.rabotin@gmail.com</a>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-label">FORMATION</span>
+              <strong>BTS SIO · SISR · 2ÈME ANNÉE</strong>
+              <span>Paul Sabatier · Carcassonne</span>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-label">PARCOURS</span>
+              <strong>BAC PRO SN · OPTION C</strong>
+              <span>Lycée La Salle · Alès</span>
+            </div>
+          </div>
+
+          <!-- Le bouton ouvre le logiciel de messagerie de l'utilisateur. -->
+          <a class="btn primary contact-mail-btn" href="mailto:lucian.rabotin@gmail.com">
+            ENVOYER UN EMAIL
+          </a>
+        </aside>
+
+        <!-- Formulaire visuel : aucun envoi ni stockage n'est effectué. -->
+        <div class="contact-form-wrap reveal">
+          <div class="form-heading">
+            <span class="number">MESSAGE</span>
+            <h2>ÉCRIRE UN MESSAGE</h2>
+          </div>
+
+          <form class="contact-form" action="#" method="post" onsubmit="return false;">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="contact-name">Nom</label>
+                <input id="contact-name" name="name" type="text" placeholder="Votre nom" autocomplete="name">
+              </div>
+
+              <div class="form-field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" placeholder="Votre adresse email" autocomplete="email">
+              </div>
+
+              <div class="form-field full">
+                <label for="contact-subject">Sujet</label>
+                <input id="contact-subject" name="subject" type="text" placeholder="Objet de votre message">
+              </div>
+
+              <div class="form-field full">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" placeholder="Votre message"></textarea>
+              </div>
+            </div>
+
+            <div class="contact-submit-row">
+              <button type="button" class="btn primary" id="contactDemoButton">
+                ENVOYER
+              </button>
+              <span class="contact-status" id="contactStatus" aria-live="polite">
+                Formulaire de présentation
+              </span>
+            </div>
+          </form>
+
+          <div class="contact-note">
+            <strong>À PROPOS DU FORMULAIRE</strong>
+            <p>
+              Ce formulaire est actuellement une interface de présentation :
+              aucun message n'est envoyé ni stocké sur un serveur.
+              Le bouton « Envoyer » n'effectue donc aucune transmission.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page. -->
+  <!-- Pied de page : contact et liens professionnels. -->
+<footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>Lucian RABOTIN</h3>
+        <p>
+          Étudiant en BTS SIO 2ème année, passionné par les réseaux,
+          les infrastructures et la cybersécurité.
+        </p>
+
+        <div class="social">
+          <!-- Les liens seront ajoutés lorsque les URLs seront disponibles. -->
+          <a href="mailto:lucian.rabotin@gmail.com" aria-label="Envoyer un email">✉</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Liens rapides</h3>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="parcours.html">Parcours</a>
+          <a href="e5.html">Portfolio E5</a>
+          <a href="e6.html">Portfolio E6</a>
+          <a href="guide.html">Guide</a>
+          <a href="contact.html">Contact</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="mailto:lucian.rabotin@gmail.com">✉ lucian.rabotin@gmail.com</a>
+          <button class="btn secondary" type="button" data-cookie-reset>
+            Gestion des cookies
+          </button>
+        <a href="https://www.linkedin.com/in/lucian-rabotin-715386337" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/LXN-RBTN" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Lucian RABOTIN · Tous droits réservés. ·
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+  </footer>
+
+  <!-- Bandeau cookies. -->
+  <div class="cookie">
+    <p>
+      <strong>🍪 Respect de votre vie privée</strong><br>
+      Ce site mémorise uniquement votre choix concernant ce bandeau grâce au stockage local.
+    </p>
+    <div class="btns" style="margin:0">
+      <button class="btn secondary" id="refuseCookies">Refuser</button>
+      <button class="btn primary" id="acceptCookies">Accepter</button>
+    </div>
+  </div>
+
+  <!-- Scripts communs. -->
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cookie.js"></script>
+
+  <!-- Comportement du formulaire de démonstration. -->
+  <script>
+    /* Le formulaire reste volontairement sans envoi côté serveur. */
+    document.querySelector('#contactDemoButton')?.addEventListener('click', () => {
+      const status = document.querySelector('#contactStatus');
+      if (status) {
+        status.textContent = 'Formulaire de présentation — aucun message envoyé.';
+      }
+    });
+  </script>
+</body>
+</html>
