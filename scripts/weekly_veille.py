@@ -238,9 +238,11 @@ def respond():
         return
     publish(theme, item, current_week)
     print("ARTICLE_APPROVED=" + theme)
-    api("POST", "/issues/" + str(number) + "/comments",
-        {"body": "✅ Article validé. Le workflow va mettre à jour le portfolio."})
-    api("PATCH", "/issues/" + str(number), {"state": "closed"})
+    # Ne fermer la proposition qu’après la réussite du git push.
+    output_path = os.environ.get("GITHUB_OUTPUT")
+    if output_path:
+        with open(output_path, "a", encoding="utf-8") as out:
+            out.write("approved=true\\n".replace("\\n", "\n"))
 
 
 if __name__ == "__main__":
