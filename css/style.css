@@ -523,3 +523,27 @@ footer{background:#0a0f18;color:#fff;padding:75px 0 20px;border-top:1px solid #1
 .cert-disclaimer{color:#75869b;font-size:11px;margin-top:18px}
 @media(max-width:1000px){.cert-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.cert-grid{grid-template-columns:1fr}.cert-section-heading{align-items:flex-start;flex-direction:column;gap:7px}}
+
+/* Identités visuelles fournies : planche de 5 logos en SVG contenant une image WebP. */
+.cert-logo {
+  position: relative;
+  background: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-logo::before {
+  content: "";
+  display: block;
+  flex: 0 0 150px;
+  width: 150px;
+  height: 105px;
+  background-image: url("../assets/images/certifications/identites.svg");
+  background-repeat: no-repeat;
+  background-size: 750px 105px;
+}
+.cert-logo-cisco::before { background-position: 0 0; }
+.cert-logo-anssi::before { background-position: -150px 0; }
+.cert-logo-ctf::before { background-position: -300px 0; }
+.cert-logo-cnil::before { background-position: -450px 0; }
+.cert-logo-fortinet::before { background-position: -600px 0; }
