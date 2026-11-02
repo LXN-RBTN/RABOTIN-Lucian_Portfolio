@@ -41,7 +41,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/weekly_veille.py propose
 
+      - name: Vérifier la syntaxe Python
+        run: python -m py_compile scripts/weekly_veille.py
+
       - name: Traiter le vote du propriétaire
+        id: moderation
         if: github.event_name == 'issue_comment'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,7 +54,7 @@ jobs:
         run: python scripts/weekly_veille.py respond
 
       - name: Publier uniquement les fichiers effectivement modifiés
-        if: github.event_name == 'issue_comment'
+        if: steps.moderation.outputs.approved == 'true'
         run: |
           if git diff --quiet -- data/cyber-articles.json data/5g-6g-articles.json data/veille-publications.json veille-cyber.html veille-5g-6g.html && [ ! -f data/veille-publications.json ]; then
             echo "Aucune modification à publier"
@@ -63,3 +67,11 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "veille: publier un article validé"
           git push origin HEAD:main
+
+      - name: Confirmer et fermer la proposition publiée
+        if: steps.moderation.outputs.approved == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: gh issue close "$ISSUE_NUMBER" --comment "✅ Article ajouté au portfolio et publication GitHub déclenchée."
