@@ -1,7 +1,20 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-11-02",
   "theme": "Cybersécurité",
   "articles": [
+    {
+      "date": "2026-10-30",
+      "category": "Vulnérabilités Linux",
+      "title": "Une faille du noyau Linux expose certains serveurs MPTCP à une attaque distante",
+      "source": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/critical-linux-kernel-flaw-allows-remote-root-attacks-on-mptcp-servers/",
+      "summary": "Des chercheurs ont présenté une exploitation d'une vulnérabilité du noyau Linux pouvant permettre une exécution de commandes avec les droits root sur certains serveurs Multipath TCP. Vérifier les correctifs et les configurations concernées.",
+      "id": 29,
+      "image": "assets/images/veille/veille-cyber.svg",
+      "image_prompt": "Illustration originale générique — remplacer par une image vérifiée si souhaité.",
+      "featured_text": "Une faille du noyau Linux expose certains serveurs MPTCP à une attaque distante",
+      "approved_week": "2026-W45"
+    },
     {
       "id": 1,
       "date": "2026-10-09",
