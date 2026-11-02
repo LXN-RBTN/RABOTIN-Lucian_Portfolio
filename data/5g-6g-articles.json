@@ -1,7 +1,20 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-11-02",
   "theme": "5G / 6G",
   "articles": [
+    {
+      "date": "2026-10-28",
+      "category": "6G et standardisation",
+      "title": "L'ETSI lance un nouveau groupe de travail sur les communications sémantiques pour la 6G",
+      "source": "ETSI",
+      "url": "https://www.etsi.org/newsroom/news/etsi-establishes-new-standards-group-to-advance-semantic-communications-for-6g/",
+      "summary": "L'ETSI crée un groupe chargé de poser les bases de la standardisation des communications sémantiques dans les réseaux 6G, notamment pour mieux transmettre l'information utile aux systèmes d'intelligence artificielle.",
+      "id": 29,
+      "image": "assets/images/veille/veille-5g.svg",
+      "image_prompt": "Illustration originale générique — remplacer par une image vérifiée si souhaité.",
+      "featured_text": "L'ETSI lance un nouveau groupe de travail sur les communications sémantiques pour la 6G",
+      "approved_week": "2026-W45"
+    },
     {
       "date": "2026-09-24",
       "category": "Déploiement et couverture",
