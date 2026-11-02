@@ -7,6 +7,8 @@ on:
   workflow_dispatch:
   issue_comment:
     types: [created]
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
 
 permissions:
   contents: write
@@ -19,8 +21,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  test:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installer la dépendance
+        run: python -m pip install feedparser==6.0.12
+      - name: Vérifier la syntaxe
+        run: python -m py_compile scripts/weekly_veille.py
+      - name: Tester la publication dans un dossier temporaire
+        run: python -m unittest discover -s tests -p 'test_veille.py' -v
+
   veille:
-    if: github.event_name != 'issue_comment' || (github.event.comment.user.login == github.repository_owner && (github.event.comment.body == 'oui' || github.event.comment.body == 'non'))
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'issue_comment' && github.event.comment.user.login == github.repository_owner && (github.event.comment.body == 'oui' || github.event.comment.body == 'non'))
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le dépôt
