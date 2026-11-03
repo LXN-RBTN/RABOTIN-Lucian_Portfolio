@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><meta name="description" content="Compte rendu AP2.1 de Lucian Rabotin : serveur Windows, DHCP et tests de connectivité pour le projet M2L."><title>AP2.1 — Compte rendu de la configuration DHCP | Lucian Rabotin</title><style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#080d17;color:#e8f1ff;font:16px/1.7 system-ui,-apple-system,Segoe UI,sans-serif}a{color:#70b6ff}header{background:#111d30;border-bottom:1px solid #253d5e;padding:16px max(20px,calc((100vw - 1000px)/2))}header a{font-weight:700;text-decoration:none}main{max-width:1000px;margin:auto;padding:38px 20px 70px}.eyebrow{color:#60afff;font-size:14px;letter-spacing:.1em;text-transform:uppercase}h1{font-size:clamp(26px,5vw,42px);line-height:1.25;margin:10px 0 14px}h2{font-size:23px;margin:0 0 14px;color:#fff}h3{margin:25px 0 8px;color:#b8d9ff}.intro{color:#bad0eb;font-size:17px}.panel{background:#101b2c;border-left:3px solid #168cff;padding:24px;margin:24px 0;border-radius:0 8px 8px 0}p{margin:12px 0}ul{padding-left:23px}li{margin:6px 0}.overflow{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:550px;font-size:14px}th,td{text-align:left;border-bottom:1px solid #32455f;padding:9px 11px}th{color:#a9d5ff;background:#152945}code,pre{font:14px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}code{color:#b4d9ff}pre{white-space:pre-wrap;background:#060d1b;border:1px solid #284365;padding:15px;overflow-wrap:anywhere;border-radius:6px}.tag{display:inline-block;border:1px solid #35608d;border-radius:999px;font-size:13px;padding:3px 10px;color:#9ed0ff;margin:0 5px 5px 0}.back{display:inline-block;margin-top:26px;padding:10px 16px;border:1px solid #168cff;border-radius:5px;text-decoration:none}footer{border-top:1px solid #203451;text-align:center;color:#8ca9cd;padding:23px 15px;font-size:13px}@media(max-width:600px){.panel{padding:18px}} </style></head>
+<body><header><a href="../e6.html">LR · Lucian Rabotin — Portfolio E6</a></header>
+<main><p class="eyebrow">BTS SIO · Atelier professionnel AP2.1</p><h1>AP2.1 — Configuration d'un serveur Windows et du service DHCP</h1>
+<p class="intro">Compte rendu des travaux effectués dans le cadre de la mission de découpage du réseau M2L : adressage IPv4, installation de DHCP sous Windows Server, création d'une étendue et tests de connectivité.</p>
+<div class="panel"><span class="tag">Windows Server 2022</span><span class="tag">PowerShell</span><span class="tag">DHCP</span><span class="tag">Tests réseau</span>
+<p>Ce document reprend les cinq pages du compte rendu AP2.1 transmis. Il décrit la partie <strong>serveur Windows et DHCP</strong> de l'atelier. Il ne démontre pas à lui seul la configuration des VLAN, des commutateurs Cisco ou du serveur Debian prévue par le sujet général.</p></div>
+<section class="panel"><h2>1. Configuration de l'adressage IPv4 fixe</h2>
+<p>Sur un serveur Windows Server 2022 installé sans interface graphique, j'ai utilisé l'outil <code>sconfig</code> pour choisir la carte réseau et définir une adresse IP statique.</p>
+<div class="overflow"><table><thead><tr><th>Paramètre</th><th>Valeur indiquée dans le compte rendu</th></tr></thead><tbody>
+<tr><td>Adresse IPv4 du serveur</td><td>192.168.20.2</td></tr>
+<tr><td>Passerelle par défaut</td><td>192.168.20.1</td></tr>
+<tr><td>Serveur DNS utilisé dans ce test</td><td>8.8.8.8</td></tr>
+<tr><td>Nom d'hôte</td><td>SRV</td></tr></tbody></table></div>
+<p>Le nom de l'ordinateur a ensuite été modifié dans <code>sconfig</code> pour devenir <strong>SRV</strong>. Les captures et le texte d'origine présentent de légères différences dans les paramètres affichés ; les valeurs ci-dessus sont celles décrites dans le texte.</p></section>
+<section class="panel"><h2>2. Installation du rôle DHCP</h2>
+<p>Le rôle DHCP et ses outils d'administration ont été installés dans PowerShell avec la commande :</p>
+<pre>Install-WindowsFeature DHCP -IncludeManagementTools</pre>
+<p>Ce rôle permet de distribuer automatiquement les adresses IPv4 aux postes clients, notamment à ceux du sous-réseau <strong>CURLING</strong> cité dans le document.</p></section>
+<section class="panel"><h2>3. Démarrage et vérification du service DHCP</h2>
+<p>Après l'installation, le service a été démarré puis vérifié avec les commandes suivantes :</p>
+<pre>Start-Service DHCPServer
+Get-Service DHCPServer</pre>
+<p>Dans la capture du compte rendu, <code>Get-Service DHCPServer</code> affiche <strong>Running</strong>, ce qui confirme que le service est démarré.</p></section>
+<section class="panel"><h2>4. Création de l'étendue CURLING</h2>
+<p>J'ai utilisé la commande PowerShell <code>Add-DhcpServerv4Scope</code> pour créer une étendue d'adresses à distribuer aux clients du sous-réseau CURLING, puis <code>Get-DhcpServerv4Scope</code> pour contrôler sa configuration.</p>
+<pre>Add-DhcpServerv4Scope
+Get-DhcpServerv4Scope</pre>
+<p>Le compte rendu mentionne une plage initialement souhaitée de <strong>192.168.20.10 à 192.168.20.100</strong>. Le résultat affiché dans la capture se termine toutefois à <strong>192.168.20.120</strong>. Cette divergence est conservée telle quelle : le compte rendu ne permet pas de confirmer qu'elle a été corrigée.</p></section>
+<section class="panel"><h2>5. Test de communication avec le serveur</h2>
+<p>Depuis un poste client, la commande <code>ping</code> vers le serveur <code>192.168.20.2</code> a d'abord échoué. Une règle a ensuite été ajoutée au pare-feu Windows pour autoriser les requêtes <strong>ICMPv4 entrantes</strong>.</p>
+<p>Une nouvelle tentative de ping a alors reçu des réponses du serveur. Le test confirme que la machine cliente pouvait joindre le serveur après cette modification du pare-feu, mais ne suffit pas à démontrer à lui seul que l'attribution DHCP a été vérifiée sur tous les VLAN.</p></section>
+<section class="panel"><h2>6. Bilan du compte rendu</h2>
+<ul><li>Adresse IP statique configurée sur un serveur Windows.</li><li>Nom de l'hôte modifié en <strong>SRV</strong>.</li><li>Rôle serveur DHCP installé avec PowerShell.</li><li>Service DHCP démarré et vérifié à l'état <strong>Running</strong>.</li><li>Étendue <strong>CURLING</strong> créée et consultée.</li><li>Test de connectivité réussi après adaptation du pare-feu.</li></ul>
+<p>Les mots de passe notés dans le document de travail ont été volontairement omis, car ce portfolio est public. Cette version web résume les étapes et résultats sans reproduire les captures du PDF original.</p></section>
+<a class="back" href="../e6.html">← Retour aux ateliers E6</a></main><footer>Portfolio BTS SIO — Lucian Rabotin · Compte rendu consultable en ligne</footer></body></html>
