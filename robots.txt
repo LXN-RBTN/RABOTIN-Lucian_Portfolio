@@ -3,3 +3,4 @@ Allow: /
 Disallow: /scripts/
 Disallow: /.well-known/
 Disallow: /README.md
+Sitemap: https://lxn-rbtn.github.io/RABOTIN-Lucian_Portfolio/sitemap.xml
