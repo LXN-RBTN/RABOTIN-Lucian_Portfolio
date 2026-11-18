@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 1250" role="img" aria-label="Fortinet NSE 1 Certified in Cybersecurity">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#155b5c"/><stop offset=".55" stop-color="#198f95"/><stop offset="1" stop-color="#22c8cf"/></linearGradient>
+<clipPath id="shape"><path d="M0 0H1250V935Q1250 1250 935 1250H0Z"/></clipPath>
+</defs>
+<g clip-path="url(#shape)">
+<rect width="1250" height="1250" fill="url(#bg)"/>
+<path d="M-140 310L1370 60V245L-140 495Z" fill="#fff" opacity=".045"/>
+<path d="M-140 645L1370 400V600L-140 850Z" fill="#fff" opacity=".045"/>
+<path d="M-140 1000L1370 750V960L-140 1210Z" fill="#fff" opacity=".04"/>
+<g fill="#fff" font-family="Arial,Helvetica,sans-serif" font-weight="800">
+<text x="96" y="300" font-size="275" letter-spacing="-7">NSE 1</text>
+<text x="96" y="485" font-size="157" letter-spacing="-3">CERTIFIED</text>
+<rect x="0" y="600" width="485" height="28"/>
+<text x="96" y="826" font-size="119" letter-spacing="-3">CYBERSECURITY</text>
+<text x="96" y="1138" font-size="117" font-weight="900" letter-spacing="-2">FORTINET</text>
+</g></g></svg>
